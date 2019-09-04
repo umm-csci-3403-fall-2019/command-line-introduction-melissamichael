@@ -9,10 +9,10 @@ DIR_NAME=$2
 
 tar zxf NthPrime.tgz  --directory "$DIR_NAME"
 
-cd $DIR_NAME/NthPrime
+cd "$DIR_NAME"/NthPrime || exit
 
 gcc -o NthPrime main.c nth_prime.c
 
-./NthPrime $NUM
+./NthPrime "$NUM"
 
 # rm -rf "$SCRATCH"
