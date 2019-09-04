@@ -12,12 +12,15 @@ HERE=$(pwd)
 
 cd "$SCRATCH" || exit
 
+
 for file in $DEL_FILES
 do	
+
 	rm "$file"
 done
 
-cd "$HERE" || exit
+#cd "$HERE" || exit
 
-tar zcf "cleaned_$TAR_NAME" "$SCRATCH"
 
+#tar zcf "cleaned_$TAR_NAME" "$SCRATCH/$(basename $1 .tgz)"
+tar zcf "$HERE/cleaned_$TAR_NAME" $(basename $TAR_NAME .tgz)
